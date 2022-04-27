@@ -1,0 +1,79 @@
+h1 {
+  margin-top: 50px;
+  color: black;
+  font-family: "Raleway", sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 72px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body {
+  height: 100%;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+}
+
+.div-general {
+  display: flex;
+  height: 80vh;
+  width: 180vh;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.general {
+  display: flex;
+  height: 30vh;
+  width: 100%;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.calculator {
+  display: flex;
+  height: 50vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.button-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#error {
+  font-size: 12px;
+  height: 12px;
+  color: red;
+  font-size-adjust: 0.5;
+  padding: 5px;
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.calculator-input-1 {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.calculator-input-2 {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}

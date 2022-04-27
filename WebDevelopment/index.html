@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speaker Delay Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Speaker Delay Calculator</h1>
+    <br />
+    <div class="div-general">
+      <div class="general">
+        <label for="number-speakers">Chose the number of speakers:</label>
+        <select name="nr-of-speakers" id="nr-speakers">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <label for="temperature">Chose the room temperature:</label>
+        <select id="temperature" onchange="refreshData()">
+          <option value="18">18&deg;</option>
+          <option value="19">19&deg;</option>
+          <option value="20">20&deg;</option>
+          <option value="21">21&deg;</option>
+          <option value="22">22&deg;</option>
+          <option value="23">23&deg;</option>
+        </select>
+        <label for="mesurement">ft/ m</label>
+        <select id="measurement" onchange="refreshData()">
+          <option value="feet">ft</option>
+          <option value="meters">m</option>
+        </select>
+        <p id="speed-of-sound">1122 ft / s</p>
+      </div>
+      <div class="calculator">
+        <div class="button-error">
+          <button id="button-calculator" onclick="refreshData()">
+            Calculează
+          </button>
+          <p id="error"></p>
+        </div>
+
+        <div class="calculator-input-1">
+          <label for="distance-speaker-first"
+            >Distance between Speaker and Loudspeaker</label
+          >
+          <input type="number" id="distance-speaker-first" />
+          <p id="speaker-delay-1">0</p>
+          <p>ms</p>
+        </div>
+        <br />
+        <div class="calculator-input-2">
+          <label for="distance-first-second"
+            >Distance between 1st Loudspeaker and the second one</label
+          >
+          <input
+            type="number"
+            id="distance-first-second"
+            name="distance-speaker-first"
+          />
+          <p id="speaker-delay-2">0</p>
+          <p>ms</p>
+        </div>
+        <div id="for"></div>
+      </div>
+    </div>
+    <script src="db.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
