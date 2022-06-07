@@ -10,26 +10,14 @@
     <br />
     <div class="div-general">
       <div class="general">
-        <label for="number-speakers">Chose the number of speakers:</label>
-        <select
-          name="nr-of-speakers"
+        <label for="nr-speakers">Chose the number of speakers:</label>
+        <input
+          type="number"
           id="nr-speakers"
-          onchange="refreshCalculatorDivs()"
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+          oninput="refreshCalculatorDivs()"
+        />
         <label for="temperature">Chose the room temperature:</label>
-        <select id="temperature" onchange="refreshPage()">
-          <option value="18">18&deg;</option>
-          <option value="19">19&deg;</option>
-          <option value="20">20&deg;</option>
-          <option value="21">21&deg;</option>
-          <option value="22">22&deg;</option>
-          <option value="23">23&deg;</option>
-        </select>
+        <select id="temperature" onchange="refreshPage()"></select>
         <label for="mesurement">ft/ m</label>
         <select id="measurement" onchange="refreshPage()">
           <option value="feet">ft</option>
@@ -48,8 +36,8 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="db.js"></script>
-    <script type="text/javascript" src="createCalculatorDivs.js"></script>
-    <script type="text/javascript" src="calculateDelay.js"></script>
+    <script type="text/javascript" src="js/db.js"></script>
+    <script type="text/javascript" src="js/createCalculatorDivs.js"></script>
+    <script type="text/javascript" src="js/calculateDelay.js"></script>
   </body>
 </html>
