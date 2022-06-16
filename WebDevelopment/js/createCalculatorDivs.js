@@ -14,9 +14,14 @@ createTempList();
 
 //used only when changing the number of speakers
 function refreshCalculatorDivs() {
-  hideError();
-  hideOldSpeakerCalculatorDiv();
-  createSpeakerCalculatorDiv();
+  // resets page in case user deletes the input in number of speakers field
+  if (programRunTimes > 0 && numberOfSpeakers.value === "") {
+    document.location.reload(true);
+  } else {
+    hideError();
+    hideOldSpeakerCalculatorDiv();
+    createSpeakerCalculatorDiv();
+  }
 }
 
 // used for hiding error when changing the number of speakers
@@ -26,8 +31,8 @@ function hideError() {
 
 function hideOldSpeakerCalculatorDiv() {
   for (
-    let hoscdRunner = 1;
-    hoscdRunner <= historyNumberOfDivs[programRunTimes];
+    let hoscdRunner = 0;
+    hoscdRunner < historyNumberOfDivs[programRunTimes];
     hoscdRunner++
   ) {
     let specialProgramRunTimes = programRunTimes - 1;
@@ -38,6 +43,7 @@ function hideOldSpeakerCalculatorDiv() {
   }
 }
 
+// creates temp list based on database values
 function createTempList() {
   for (let ctlRunner = 0; ctlRunner < tempDatabase.length; ctlRunner++) {
     tempForList = tempDatabase[ctlRunner].temp;
@@ -50,7 +56,7 @@ function createTempList() {
 
 // creates divs up to the number of speakers
 function createSpeakerCalculatorDiv() {
-  numberOfDivs = 1;
+  numberOfDivs = 0;
 
   // used for hiding the divs before creating new ones
   historyNumberOfDivs.push(numberOfSpeakers.value);
@@ -100,7 +106,7 @@ function createSpeakerCalculatorDiv() {
     SpeakersDiv.appendChild(speakerCalculatorDiv);
 
     numberOfDivs++;
-  } while (numberOfDivs <= numberOfSpeakers.value);
+  } while (numberOfDivs < numberOfSpeakers.value);
 
   programRunTimes++;
 }

@@ -7,6 +7,8 @@ let testUserInput = 0;
 let speed = 0;
 let delay = 0;
 
+userInputCheck();
+
 function refreshPage() {
   programRunTimes--;
   testUserInput = 0; //used to test for user input
@@ -17,7 +19,7 @@ function refreshPage() {
   2. adds the distences (user input) to a database
   */
 
-  for (let rfRunner = 1; rfRunner <= numberOfSpeakers.value; rfRunner++) {
+  for (let rfRunner = 0; rfRunner < numberOfSpeakers.value; rfRunner++) {
     let distanceSp = document.getElementById(
       programRunTimes + "-" + "distance-" + rfRunner + "-speaker"
     );
@@ -71,7 +73,8 @@ function userInputCheck() {
     }
 
     if (testUserInput != numberOfSpeakers.value) {
-      error.innerText = "Please enter a valid distance!";
+      error.innerText =
+        "At least a distance is not set. In case you forgot, you can add the distance now in the appropiate fied. Or you can insert a lower number of speakers so that it matches your needs.";
     } else {
       error.style.visibility = "hidden";
       calculateDelay();
@@ -82,12 +85,12 @@ function userInputCheck() {
 function calculateDelay() {
   // calculates and shows delay
 
-  for (let cdRunner = 1; cdRunner <= numberOfSpeakers.value; cdRunner++) {
+  for (let cdRunner = 0; cdRunner < numberOfSpeakers.value; cdRunner++) {
     let speakerDelay = document.getElementById(
       programRunTimes + "-" + "speakerDelay-" + cdRunner
     );
 
-    delay = distancesValues[cdRunner - 1] / speed;
+    delay = distancesValues[cdRunner] / speed;
     speakerDelay.innerText = delay;
   }
 }
